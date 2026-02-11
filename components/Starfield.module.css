@@ -13,7 +13,7 @@
   inset: -20%;
   background-repeat: repeat;
   background-size: 420px 420px;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 /* Tiny stars */
@@ -24,8 +24,11 @@
     radial-gradient(1px 1px at 260px 200px, rgba(210,220,255,0.8), transparent),
     radial-gradient(1px 1px at 360px 80px, rgba(210,220,255,0.6), transparent),
     radial-gradient(1px 1px at 80px 260px, rgba(210,220,255,0.75), transparent),
-    radial-gradient(1px 1px at 320px 320px, rgba(210,220,255,0.65), transparent);
-  animation: drift 140s linear infinite, twinkle 8s ease-in-out infinite;
+    radial-gradient(1px 1px at 40px 380px, rgba(210,220,255,0.8), transparent),
+    radial-gradient(1px 1px at 400px 240px, rgba(210,220,255,0.7), transparent),
+    radial-gradient(1px 1px at 220px 360px, rgba(210,220,255,0.75), transparent),
+/   radial-gradient(1px 1px at 320px 320px, rgba(210,220,255,0.65), transparent);
+    animation: drift 140s linear infinite, twinkle 8s ease-in-out infinite;
 }
 
 /* A few slightly larger, dimmer stars */
@@ -42,13 +45,13 @@
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.55; }
-  50% { opacity: 0.85; }
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.95; }
 }
 
 @keyframes twinkle2 {
-  0%, 100% { opacity: 0.28; }
-  50% { opacity: 0.55; }
+  0%, 100% { opacity: 0.18; }
+  50% { opacity: 0.65; }
 }
 
 @keyframes drift {

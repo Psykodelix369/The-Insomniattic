@@ -1,15 +1,23 @@
+import Starfield from "@/components/Starfield";
 
-import Starfield from "../components/Starfield";
-
-export default function Home() {
+export default function Page() {
   return (
-    <main style={{ minHeight: "100vh", padding: "8rem 2rem", position: "relative" }}>
+    <main className="relative flex min-h-screen items-center justify-center bg-zinc-950 overflow-hidden">
+      
+      {/* Star background */}
       <Starfield />
 
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <h1>The Insomniattic</h1>
-        <p>A place for those unwillingly addicted to insomnia.</p>
+      {/* Content */}
+      <div className="relative z-10 text-center">
+        <h1 className="neon-glass">
+          The Insomniattic
+        </h1>
+
+        <p className="mt-6 text-zinc-400 tracking-wide">
+          A place for those unwillingly addicted to insomnia.
+        </p>
       </div>
+
     </main>
   );
 }

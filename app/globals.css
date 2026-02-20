@@ -1,39 +1,43 @@
-@keyframes neonCycle {
-  0%, 100% {
-    text-shadow:
-      0 0 2px #fff,
-      0 0 6px #fff,
-      0 0 14px #a855f7,
-      0 0 28px #a855f7,
-      0 0 50px rgba(168, 85, 247, 0.5);
-  }
+.neon-sign {
+  font-family: var(--font-neon), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
 
-  33% {
-    text-shadow:
-      0 0 2px #fff,
-      0 0 6px #fff,
-      0 0 14px #22d3ee,
-      0 0 28px #22d3ee,
-      0 0 50px rgba(34, 211, 238, 0.5);
-  }
+  /* Gradient like your example: pink → blue → green */
+  background: linear-gradient(90deg, #ff4fd8 0%, #5fd2ff 52%, #a7ff6a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 
-  66% {
-    text-shadow:
-      0 0 2px #fff,
-      0 0 6px #fff,
-      0 0 14px #34d399,
-      0 0 28px #34d399,
-      0 0 50px rgba(52, 211, 153, 0.5);
-  }
+  /* Tube outline */
+  -webkit-text-stroke: 7px rgba(255, 255, 255, 0.18);
+
+  /* Neon glow */
+  filter:
+    drop-shadow(0 0 6px rgba(255, 79, 216, 0.55))
+    drop-shadow(0 0 14px rgba(95, 210, 255, 0.45))
+    drop-shadow(0 0 22px rgba(167, 255, 106, 0.35));
+
+  /* Optional: slight “breathing” glow */
+  animation: neonBreath 6s ease-in-out infinite;
 }
 
-.neon-glass {
-  font-family: var(--font-tilt-neon), sans-serif;
-  color: #ffffff;
-  font-size: clamp(3rem, 6vw, 5rem);
-  letter-spacing: 0.05em;
-
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
-
-  animation: neonCycle 12s ease-in-out infinite;
+/* Gentle glow pulse (not cheesy) */
+@keyframes neonBreath {
+  0%, 100% {
+    opacity: 0.98;
+    filter:
+      drop-shadow(0 0 6px rgba(255, 79, 216, 0.50))
+      drop-shadow(0 0 14px rgba(95, 210, 255, 0.40))
+      drop-shadow(0 0 22px rgba(167, 255, 106, 0.30));
+  }
+  50% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 8px rgba(255, 79, 216, 0.65))
+      drop-shadow(0 0 18px rgba(95, 210, 255, 0.55))
+      drop-shadow(0 0 28px rgba(167, 255, 106, 0.45));
+  }
 }

@@ -26,9 +26,7 @@ export default function Page() {
           maxWidth: "900px",
         }}
       >
-        <h1 className="neon-glass" style={{ margin: 0 }}>
-          The Insomniattic
-        </h1>
+        <h1 className="neon-sign">The Insomniattic</h1>
 
         <p
           style={{

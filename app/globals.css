@@ -1,19 +1,39 @@
 @keyframes neonCycle {
   0%, 100% {
-    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 18px #bf00ff, 0 0 36px #bf00ff;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 6px #fff,
+      0 0 14px #a855f7,
+      0 0 28px #a855f7,
+      0 0 50px rgba(168, 85, 247, 0.5);
   }
+
   33% {
-    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 18px #00ff00, 0 0 36px #00ff00;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 6px #fff,
+      0 0 14px #22d3ee,
+      0 0 28px #22d3ee,
+      0 0 50px rgba(34, 211, 238, 0.5);
   }
+
   66% {
-    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 18px #00bfff, 0 0 36px #00bfff;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 6px #fff,
+      0 0 14px #34d399,
+      0 0 28px #34d399,
+      0 0 50px rgba(52, 211, 153, 0.5);
   }
 }
 
 .neon-glass {
   font-family: var(--font-tilt-neon), sans-serif;
-  color: #fff;
+  color: #ffffff;
   font-size: clamp(3rem, 6vw, 5rem);
-  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.25);
-  animation: neonCycle 10s ease-in-out infinite;
+  letter-spacing: 0.05em;
+
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+
+  animation: neonCycle 12s ease-in-out infinite;
 }

@@ -17,10 +17,13 @@ export default function Page() {
 
       <div style={{ position: "relative", zIndex: 10, textAlign: "center" }}>
         <h1 className="neon-glass">The Insomniattic</h1>
-        <p style={{ marginTop: "1.5rem", color: "#a1a1aa", letterSpacing: "0.02em" }}>
-          A place for those unwillingly addicted to insomnia.
-        </p>
-      </div>
-    </main>
-  );
-}
+        <p
+  style={{
+    marginTop: "1.5rem",
+    color: "#9ca3af",
+    letterSpacing: "0.08em",
+    fontSize: "0.95rem"
+  }}
+>
+  A place for those unwillingly addicted to insomnia.
+</p>

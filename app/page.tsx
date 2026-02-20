@@ -1,4 +1,4 @@
-import Starfield from "@/components/Starfield";
+import Starfield from "../components/Starfield";
 
 export default function Page() {
   return (

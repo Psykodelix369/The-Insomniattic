@@ -6,7 +6,6 @@
   overflow: hidden;
 }
 
-/* Base layer styling */
 .layer {
   position: absolute;
   inset: -20%;
@@ -18,60 +17,62 @@
 
 /* ========= LOOK MODIFIERS ========= */
 
-/* Keep one layer crisp and slightly brighter */
+/* Slightly brighter + crisp */
 .crisp {
-  filter: drop-shadow(0 0 3px rgba(210, 230, 255, 0.95));
+  filter:
+    drop-shadow(0 0 2px rgba(255,255,255,0.95))
+    drop-shadow(0 0 6px rgba(180,210,255,0.85));
 }
 
-/* Two layers hazy: blur + softer glow */
+/* Hazy / atmospheric glow */
 .hazy {
-  filter: blur(0.6px) drop-shadow(0 0 6px rgba(190, 215, 255, 0.55));
-  opacity: 0.9; /* keep close to current brightness but slightly softer */
+  filter:
+    blur(1.2px)
+    drop-shadow(0 0 18px rgba(120,170,255,0.35));
+  opacity: 0.75;
 }
 
 /* ========= STAR MAPS ========= */
 
-/* STAR MAP A (crisp + a touch brighter) */
+/* Crisp layer (slightly brighter stars) */
 .setA {
   background-image:
-    radial-gradient(1.7px 1.7px at 20px 30px, rgba(245,250,255,1), transparent),
-    radial-gradient(1.7px 1.7px at 140px 120px, rgba(235,245,255,0.98), transparent),
-    radial-gradient(1.7px 1.7px at 260px 200px, rgba(225,240,255,0.95), transparent),
-    radial-gradient(1.7px 1.7px at 360px 80px, rgba(215,235,255,0.92), transparent),
-    radial-gradient(1.7px 1.7px at 80px 260px, rgba(235,245,255,0.96), transparent),
-    radial-gradient(1.7px 1.7px at 320px 320px, rgba(220,240,255,0.92), transparent);
-  animation: drift 140s linear infinite, alternateFade 18s ease-in-out infinite;
+    radial-gradient(1.8px 1.8px at 20px 30px, rgba(245,250,255,1), transparent),
+    radial-gradient(1.8px 1.8px at 140px 120px, rgba(235,245,255,0.98), transparent),
+    radial-gradient(1.8px 1.8px at 260px 200px, rgba(225,240,255,0.95), transparent),
+    radial-gradient(1.8px 1.8px at 360px 80px, rgba(215,235,255,0.92), transparent),
+    radial-gradient(1.8px 1.8px at 80px 260px, rgba(235,245,255,0.96), transparent),
+    radial-gradient(1.8px 1.8px at 320px 320px, rgba(220,240,255,0.92), transparent);
+  animation: drift 140s linear infinite, alternateFade 24s ease-in-out infinite;
 }
 
-/* STAR MAP B (hazy) */
+/* Hazy star map B */
 .setB {
   background-image:
-    radial-gradient(1.6px 1.6px at 60px 70px, rgba(235,245,255,0.92), transparent),
-    radial-gradient(1.6px 1.6px at 180px 40px, rgba(225,240,255,0.88), transparent),
-    radial-gradient(1.6px 1.6px at 300px 260px, rgba(215,235,255,0.86), transparent),
-    radial-gradient(1.6px 1.6px at 380px 140px, rgba(205,230,255,0.84), transparent),
-    radial-gradient(1.6px 1.6px at 120px 320px, rgba(220,240,255,0.86), transparent),
-    radial-gradient(1.6px 1.6px at 340px 360px, rgba(210,235,255,0.82), transparent);
-  animation: drift 140s linear infinite, alternateFade 18s ease-in-out infinite;
-  animation-delay: 6s;
+    radial-gradient(1.6px 1.6px at 60px 70px, rgba(235,245,255,0.9), transparent),
+    radial-gradient(1.6px 1.6px at 180px 40px, rgba(225,240,255,0.86), transparent),
+    radial-gradient(1.6px 1.6px at 300px 260px, rgba(215,235,255,0.84), transparent),
+    radial-gradient(1.6px 1.6px at 380px 140px, rgba(205,230,255,0.82), transparent),
+    radial-gradient(1.6px 1.6px at 120px 320px, rgba(220,240,255,0.84), transparent),
+    radial-gradient(1.6px 1.6px at 340px 360px, rgba(210,235,255,0.8), transparent);
+  animation: drift 140s linear infinite, alternateFade 24s ease-in-out infinite;
+  animation-delay: 8s;
 }
 
-/* STAR MAP C (hazy) */
+/* Hazy star map C */
 .setC {
   background-image:
-    radial-gradient(1.6px 1.6px at 30px 200px, rgba(235,245,255,0.9), transparent),
-    radial-gradient(1.6px 1.6px at 210px 110px, rgba(225,240,255,0.86), transparent),
-    radial-gradient(1.6px 1.6px at 270px 50px, rgba(215,235,255,0.84), transparent),
-    radial-gradient(1.6px 1.6px at 410px 300px, rgba(205,230,255,0.82), transparent),
-    radial-gradient(1.6px 1.6px at 150px 260px, rgba(220,240,255,0.84), transparent),
-    radial-gradient(1.6px 1.6px at 360px 220px, rgba(210,235,255,0.8), transparent);
-  animation: drift 140s linear infinite, alternateFade 18s ease-in-out infinite;
-  animation-delay: 12s;
+    radial-gradient(1.6px 1.6px at 30px 200px, rgba(235,245,255,0.88), transparent),
+    radial-gradient(1.6px 1.6px at 210px 110px, rgba(225,240,255,0.84), transparent),
+    radial-gradient(1.6px 1.6px at 270px 50px, rgba(215,235,255,0.82), transparent),
+    radial-gradient(1.6px 1.6px at 410px 300px, rgba(205,230,255,0.8), transparent),
+    radial-gradient(1.6px 1.6px at 150px 260px, rgba(220,240,255,0.82), transparent),
+    radial-gradient(1.6px 1.6px at 360px 220px, rgba(210,235,255,0.78), transparent);
+  animation: drift 140s linear infinite, alternateFade 24s ease-in-out infinite;
+  animation-delay: 16s;
 }
 
-/* ========= ANIMATION ========= */
-
-/* Alternating fade — smooth turn-taking */
+/* Alternating fade */
 @keyframes alternateFade {
   0%, 15%   { opacity: 0; }
   35%, 65%  { opacity: 1; }

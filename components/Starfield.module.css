@@ -6,63 +6,69 @@
   overflow: hidden;
 }
 
-.layer,
-.layer2 {
+/* Base layer styling */
+.layer {
   position: absolute;
   inset: -20%;
   background-repeat: repeat;
+  background-size: 420px 420px;
   pointer-events: none;
   opacity: 1;
   filter: drop-shadow(0 0 3px rgba(210, 230, 255, 0.9));
 }
 
-/* Main visible stars */
-.layer {
-  background-size: 420px 420px;
+/* ========== STAR MAP A ========== */
+.setA {
   background-image:
     radial-gradient(1.6px 1.6px at 20px 30px, rgba(235,245,255,1), transparent),
     radial-gradient(1.6px 1.6px at 140px 120px, rgba(225,240,255,0.95), transparent),
     radial-gradient(1.6px 1.6px at 260px 200px, rgba(215,235,255,0.92), transparent),
     radial-gradient(1.6px 1.6px at 360px 80px, rgba(205,230,255,0.88), transparent),
     radial-gradient(1.6px 1.6px at 80px 260px, rgba(220,240,255,0.92), transparent),
-    radial-gradient(1.6px 1.6px at 320px 320px, rgba(210,235,255,0.88), transparent),
-    radial-gradient(1.6px 1.6px at 400px 240px, rgba(230,240,255,0.95), transparent),
-    radial-gradient(1.6px 1.6px at 220px 360px, rgba(210,230,255,0.9), transparent);
-  animation: drift 140s linear infinite, twinkle 8s ease-in-out infinite;
+    radial-gradient(1.6px 1.6px at 320px 320px, rgba(210,235,255,0.88), transparent);
+  animation: drift 140s linear infinite, alternateFade 18s ease-in-out infinite;
 }
 
-/* Dim background layer */
-.layer2 {
-  background-size: 650px 650px;
-  opacity: 0.6;
+/* ========== STAR MAP B ========== */
+.setB {
   background-image:
-    radial-gradient(1.4px 1.4px at 90px 160px, rgba(200,220,255,0.6), transparent),
-    radial-gradient(1.4px 1.4px at 300px 320px, rgba(190,210,255,0.5), transparent),
-    radial-gradient(1.4px 1.4px at 520px 220px, rgba(180,200,255,0.55), transparent),
-    radial-gradient(1.4px 1.4px at 620px 60px, rgba(170,190,255,0.45), transparent);
-  animation: drift2 220s linear infinite, twinkle2 11s ease-in-out infinite;
+    radial-gradient(1.6px 1.6px at 60px 70px, rgba(235,245,255,1), transparent),
+    radial-gradient(1.6px 1.6px at 180px 40px, rgba(225,240,255,0.95), transparent),
+    radial-gradient(1.6px 1.6px at 300px 260px, rgba(215,235,255,0.92), transparent),
+    radial-gradient(1.6px 1.6px at 380px 140px, rgba(205,230,255,0.88), transparent),
+    radial-gradient(1.6px 1.6px at 120px 320px, rgba(220,240,255,0.92), transparent),
+    radial-gradient(1.6px 1.6px at 340px 360px, rgba(210,235,255,0.88), transparent);
+  animation: drift 140s linear infinite, alternateFade 18s ease-in-out infinite;
+  animation-delay: 6s;
 }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.35; }
-  50% { opacity: 1; }
+/* ========== STAR MAP C ========== */
+.setC {
+  background-image:
+    radial-gradient(1.6px 1.6px at 30px 200px, rgba(235,245,255,1), transparent),
+    radial-gradient(1.6px 1.6px at 210px 110px, rgba(225,240,255,0.95), transparent),
+    radial-gradient(1.6px 1.6px at 270px 50px, rgba(215,235,255,0.92), transparent),
+    radial-gradient(1.6px 1.6px at 410px 300px, rgba(205,230,255,0.88), transparent),
+    radial-gradient(1.6px 1.6px at 150px 260px, rgba(220,240,255,0.92), transparent),
+    radial-gradient(1.6px 1.6px at 360px 220px, rgba(210,235,255,0.88), transparent);
+  animation: drift 140s linear infinite, alternateFade 18s ease-in-out infinite;
+  animation-delay: 12s;
 }
 
-@keyframes twinkle2 {
-  0%, 100% { opacity: 0.22; }
-  50% { opacity: 0.75; }
+/* Alternating fade */
+@keyframes alternateFade {
+  0%, 15%   { opacity: 0; }
+  35%, 65%  { opacity: 1; }
+  85%, 100% { opacity: 0; }
 }
 
+/* Slow drift */
 @keyframes drift {
   from { transform: translate3d(0,0,0); }
   to   { transform: translate3d(-6%, 4%, 0); }
 }
 
-@keyframes drift2 {
-  from { transform: translate3d(0,0,0); }
-  to   { transform: translate3d(5%, -3%, 0); }
-}
-
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .layer, .layer2 { animation: none; }
+  .layer { animation: none; }
 }

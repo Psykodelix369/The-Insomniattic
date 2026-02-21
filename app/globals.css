@@ -1,29 +1,84 @@
-@keyframes neonHueCycle {
-  0%, 100% { --neon: #a855f7; }  /* purple */
-  25%      { --neon: #22d3ee; }  /* blue/cyan */
-  50%      { --neon: #34d399; }  /* green */
-  75%      { --neon: #ff4fd8; }  /* pink */
-}
-
-.neon-sign {
+/* Container sizing */
+.neon-flicker {
+  margin: 0;
   font-family: var(--font-neon), system-ui, sans-serif;
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1;
+  font-size: clamp(4.2rem, 9vw, 7.2rem); /* bigger */
+}
 
-  /* BIGGER */
-  font-size: clamp(3.8rem, 8vw, 6.6rem);
+/* Each letter is its own “tube” */
+.neon-letter {
+  display: inline-block;
+  /* Base tube outline (glass) */
+  -webkit-text-stroke: 7px rgba(255, 255, 255, 0.14);
 
-  /* “tube” look */
-  color: var(--neon, #a855f7);
-  -webkit-text-stroke: 8px rgba(255, 255, 255, 0.16);
+  /* Default color (purple) */
+  color: #a855f7;
 
-  /* less glow (cleaner) */
+  /* Less glow than before */
   text-shadow:
-    0 0 2px rgba(255,255,255,0.55),           /* tube highlight */
-    0 0 10px color-mix(in srgb, var(--neon) 55%, transparent),
-    0 0 22px color-mix(in srgb, var(--neon) 35%, transparent);
+    0 0 1px rgba(255,255,255,0.40),
+    0 0 10px rgba(168, 85, 247, 0.28),
+    0 0 22px rgba(168, 85, 247, 0.16);
 
-  /* slow cycling, not “party” */
-  animation: neonHueCycle 14s ease-in-out infinite;
+  /* Flicker + hue changes */
+  animation:
+    neonHue var(--t, 4.2s) ease-in-out infinite,
+    neonFlicker 4.8s steps(12, end) infinite;
+
+  animation-delay: var(--d, 0s), calc(var(--d, 0s) * -0.7);
+}
+
+/* Color cycle (no rainbow fill; one hue at a time) */
+@keyframes neonHue {
+  0%, 100% { 
+    color: #a855f7; /* purple */
+    text-shadow:
+      0 0 1px rgba(255,255,255,0.40),
+      0 0 10px rgba(168, 85, 247, 0.28),
+      0 0 22px rgba(168, 85, 247, 0.16);
+  }
+  33% { 
+    color: #22d3ee; /* blue/cyan */
+    text-shadow:
+      0 0 1px rgba(255,255,255,0.40),
+      0 0 10px rgba(34, 211, 238, 0.26),
+      0 0 22px rgba(34, 211, 238, 0.15);
+  }
+  66% { 
+    color: #34d399; /* green */
+    text-shadow:
+      0 0 1px rgba(255,255,255,0.40),
+      0 0 10px rgba(52, 211, 153, 0.24),
+      0 0 22px rgba(52, 211, 153, 0.14);
+  }
+  85% {
+    color: #f6ff7a; /* glow-in-the-dark yellow */
+    text-shadow:
+      0 0 1px rgba(255,255,255,0.40),
+      0 0 10px rgba(246, 255, 122, 0.22),
+      0 0 22px rgba(246, 255, 122, 0.12);
+  }
+}
+
+/* Flicker: subtle dips so it feels like a real sign */
+@keyframes neonFlicker {
+  0%, 100% { opacity: 1; filter: none; }
+  7%  { opacity: 0.85; }
+  9%  { opacity: 1; }
+  22% { opacity: 0.78; }
+  24% { opacity: 1; }
+  55% { opacity: 0.90; }
+  57% { opacity: 1; }
+  73% { opacity: 0.82; }
+  75% { opacity: 1; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .neon-letter {
+    animation: none;
+  }
 }

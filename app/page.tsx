@@ -1,5 +1,27 @@
 import Starfield from "../components/Starfield";
 
+function NeonTitle({ text }: { text: string }) {
+  return (
+    <h1 className="neon-flicker" aria-label={text}>
+      {Array.from(text).map((ch, i) => (
+        <span
+          key={i}
+          className="neon-letter"
+          style={{
+            // “random-ish” variation without JS randomness
+            // different letters drift out of sync naturally
+            ["--d" as any]: `${(i * 0.17) % 2.3}s`,
+            ["--t" as any]: `${3.4 + ((i * 0.13) % 2.2)}s`,
+            ["--seed" as any]: i,
+          }}
+        >
+          {ch === " " ? "\u00A0" : ch}
+        </span>
+      ))}
+    </h1>
+  );
+}
+
 export default function Page() {
   return (
     <main
@@ -9,24 +31,15 @@ export default function Page() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "#09090b", // dark zinc-ish
+        background: "#09090b",
         overflow: "hidden",
         padding: "2rem",
       }}
     >
-      {/* Star background (homepage only) */}
       <Starfield />
 
-      {/* Content */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 10,
-          textAlign: "center",
-          maxWidth: "900px",
-        }}
-      >
-        <h1 className="neon-sign">The Insomniattic</h1>
+      <div style={{ position: "relative", zIndex: 10, textAlign: "center" }}>
+        <NeonTitle text="The Insomniattic" />
 
         <p
           style={{

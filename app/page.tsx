@@ -2,17 +2,14 @@ import Starfield from "../components/Starfield";
 
 function NeonTitle({ text }: { text: string }) {
   return (
-   <h1 className="neon-sign">The Insomniattic</h1>
+    <h1 className="neon-sign" aria-label={text}>
       {Array.from(text).map((ch, i) => (
         <span
           key={i}
           className="neon-letter"
           style={{
-            // “random-ish” variation without JS randomness
-            // different letters drift out of sync naturally
             ["--d" as any]: `${(i * 0.17) % 2.3}s`,
             ["--t" as any]: `${3.4 + ((i * 0.13) % 2.2)}s`,
-            ["--seed" as any]: i,
           }}
         >
           {ch === " " ? "\u00A0" : ch}

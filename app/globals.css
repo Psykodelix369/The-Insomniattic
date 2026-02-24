@@ -1,84 +1,20 @@
-/* Container sizing */
-.neon-flicker {
-  margin: 0;
-  font-family: var(--font-neon), system-ui, sans-serif;
-  font-weight: 600;
+.neon-sign {
+  font-family: var(--font-neon), sans-serif;
+  font-weight: 500;
+  font-size: clamp(4rem, 8vw, 6.5rem);
   letter-spacing: 0.02em;
-  line-height: 1;
-  font-size: clamp(4.2rem, 9vw, 7.2rem); /* bigger */
-}
 
-/* Each letter is its own “tube” */
-.neon-letter {
-  display: inline-block;
-  /* Base tube outline (glass) */
-  -webkit-text-stroke: 7px rgba(255, 255, 255, 0.14);
-
-  /* Default color (purple) */
   color: #a855f7;
 
-  /* Less glow than before */
   text-shadow:
-    0 0 1px rgba(255,255,255,0.40),
-    0 0 10px rgba(168, 85, 247, 0.28),
-    0 0 22px rgba(168, 85, 247, 0.16);
+    0 0 2px rgba(255,255,255,0.5),
+    0 0 20px rgba(168, 85, 247, 0.35),
+    0 0 50px rgba(168, 85, 247, 0.2);
 
-  /* Flicker + hue changes */
-  animation:
-    neonHue var(--t, 4.2s) ease-in-out infinite,
-    neonFlicker 4.8s steps(12, end) infinite;
-
-  animation-delay: var(--d, 0s), calc(var(--d, 0s) * -0.7);
+  animation: slowPulse 10s ease-in-out infinite;
 }
 
-/* Color cycle (no rainbow fill; one hue at a time) */
-@keyframes neonHue {
-  0%, 100% { 
-    color: #a855f7; /* purple */
-    text-shadow:
-      0 0 1px rgba(255,255,255,0.40),
-      0 0 10px rgba(168, 85, 247, 0.28),
-      0 0 22px rgba(168, 85, 247, 0.16);
-  }
-  33% { 
-    color: #22d3ee; /* blue/cyan */
-    text-shadow:
-      0 0 1px rgba(255,255,255,0.40),
-      0 0 10px rgba(34, 211, 238, 0.26),
-      0 0 22px rgba(34, 211, 238, 0.15);
-  }
-  66% { 
-    color: #34d399; /* green */
-    text-shadow:
-      0 0 1px rgba(255,255,255,0.40),
-      0 0 10px rgba(52, 211, 153, 0.24),
-      0 0 22px rgba(52, 211, 153, 0.14);
-  }
-  85% {
-    color: #f6ff7a; /* glow-in-the-dark yellow */
-    text-shadow:
-      0 0 1px rgba(255,255,255,0.40),
-      0 0 10px rgba(246, 255, 122, 0.22),
-      0 0 22px rgba(246, 255, 122, 0.12);
-  }
-}
-
-/* Flicker: subtle dips so it feels like a real sign */
-@keyframes neonFlicker {
-  0%, 100% { opacity: 1; filter: none; }
-  7%  { opacity: 0.85; }
-  9%  { opacity: 1; }
-  22% { opacity: 0.78; }
-  24% { opacity: 1; }
-  55% { opacity: 0.90; }
-  57% { opacity: 1; }
-  73% { opacity: 0.82; }
-  75% { opacity: 1; }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .neon-letter {
-    animation: none;
-  }
+@keyframes slowPulse {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 1; }
 }

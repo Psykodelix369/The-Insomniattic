@@ -1,7 +1,7 @@
 import "./globals.css";
-import { Rubik_Glitch } from "next/font/google";
+import { Rubik_Burned } from "next/font/google";
 
-const glitch = Rubik_Glitch({
+const burned = Rubik_Burned({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-neon",
@@ -9,7 +9,7 @@ const glitch = Rubik_Glitch({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={glitch.variable}>
+    <html lang="en" className={burned.variable}>
       <body>{children}</body>
     </html>
   );

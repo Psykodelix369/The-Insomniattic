@@ -1,21 +1,11 @@
 .neon-sign {
   font-family: var(--font-neon), sans-serif;
   font-size: clamp(4.5rem, 9vw, 7rem);
-  letter-spacing: 0.03em;
-  color: #22d3ee;
+  letter-spacing: 0.02em;
+  color: #f6ff7a; /* glow yellow */
 
   text-shadow:
-    0 0 3px #22d3ee,
-    0 0 10px rgba(34, 211, 238, 0.4),
-    0 0 22px rgba(34, 211, 238, 0.25);
-
-  animation: subtleFlicker 5s infinite;
-}
-
-@keyframes subtleFlicker {
-  0%,100% { opacity: 1; }
-  8% { opacity: 0.85; }
-  10% { opacity: 1; }
-  52% { opacity: 0.9; }
-  54% { opacity: 1; }
+    0 0 3px rgba(246,255,122,0.5),
+    0 0 15px rgba(246,255,122,0.4),
+    0 0 30px rgba(246,255,122,0.2);
 }

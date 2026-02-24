@@ -1,20 +1,39 @@
 @keyframes hueShift {
-  0%, 100% { color: #a855f7; }
-  33% { color: #22d3ee; }
-  66% { color: #34d399; }
+  0%, 100% { color: #a855f7; } /* purple */
+  33%      { color: #22d3ee; } /* blue/cyan */
+  66%      { color: #34d399; } /* green */
+  85%      { color: #f6ff7a; } /* glow-yellow */
 }
 
 .neon-sign {
-  font-family: var(--font-neon), sans-serif;
-  font-size: clamp(4.5rem, 9vw, 7rem);
+  font-family: var(--font-neon), system-ui, sans-serif;
+  font-weight: 600;
   letter-spacing: 0.03em;
+  line-height: 1;
 
-  -webkit-text-stroke: 6px rgba(255,255,255,0.15);
+  /* bigger */
+  font-size: clamp(4.6rem, 9vw, 7.6rem);
 
-  animation: hueShift 14s ease-in-out infinite;
+  /* IMPORTANT: default color so it never renders black */
+  color: #a855f7;
 
+  /* tube outline */
+  -webkit-text-stroke: 6px rgba(255, 255, 255, 0.14);
+
+  /* less glow (clean) */
   text-shadow:
-    0 0 4px currentColor,
-    0 0 14px rgba(255,255,255,0.15),
-    0 0 24px currentColor;
+    0 0 2px rgba(255,255,255,0.35),
+    0 0 10px rgba(168, 85, 247, 0.28),
+    0 0 22px rgba(168, 85, 247, 0.16);
+
+  /* cycle hues slowly */
+  animation: hueShift 16s ease-in-out infinite;
+}
+
+/* Keep it visible even if motion is reduced */
+@media (prefers-reduced-motion: reduce) {
+  .neon-sign {
+    animation: none;
+    color: #a855f7;
+  }
 }

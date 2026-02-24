@@ -2,7 +2,7 @@ import Starfield from "../components/Starfield";
 
 function NeonTitle({ text }: { text: string }) {
   return (
-    <h1 className="neon-flicker" aria-label={text}>
+   <h1 className="neon-sign">The Insomniattic</h1>
       {Array.from(text).map((ch, i) => (
         <span
           key={i}

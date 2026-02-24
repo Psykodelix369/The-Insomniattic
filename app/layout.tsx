@@ -1,15 +1,15 @@
 import "./globals.css";
-import { Monoton } from "next/font/google";
+import { Fredoka } from "next/font/google";
 
-const monoton = Monoton({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600"],
   variable: "--font-neon",
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={monoton.variable}>
+    <html lang="en" className={fredoka.variable}>
       <body>{children}</body>
     </html>
   );

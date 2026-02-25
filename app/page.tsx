@@ -1,4 +1,5 @@
 import Starfield from "../components/Starfield";
+import Moon from "../components/Moon";
 
 function NeonTitle({ text }: { text: string }) {
   return (
@@ -34,6 +35,7 @@ export default function Page() {
       }}
     >
       <Starfield />
+      <Moon />
 
       <div style={{ position: "relative", zIndex: 10, textAlign: "center" }}>
         <NeonTitle text="The Insomniattic" />

@@ -1,11 +1,23 @@
+@keyframes hueShift {
+  0%,100% { color: #a855f7; }
+  33% { color: #22d3ee; }
+  66% { color: #34d399; }
+  85% { color: #f6ff7a; }
+}
+
 .neon-sign {
-  font-family: var(--font-neon), sans-serif;
-  font-size: clamp(4.5rem, 9vw, 7rem);
-  letter-spacing: 0.02em;
-  color: #f6ff7a; /* glow yellow */
+  font-family: var(--font-neon), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(4.6rem, 9vw, 7.4rem);
+  letter-spacing: 0.03em;
+  color: #a855f7;
+
+  -webkit-text-stroke: 5px rgba(255,255,255,0.12);
 
   text-shadow:
-    0 0 3px rgba(246,255,122,0.5),
-    0 0 15px rgba(246,255,122,0.4),
-    0 0 30px rgba(246,255,122,0.2);
+    0 0 2px rgba(255,255,255,0.35),
+    0 0 12px currentColor,
+    0 0 24px rgba(255,255,255,0.1);
+
+  animation: hueShift 18s ease-in-out infinite;
 }

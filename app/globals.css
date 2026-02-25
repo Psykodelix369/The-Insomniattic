@@ -21,3 +21,42 @@
 
   animation: hueShift 18s ease-in-out infinite;
 }
+/* ===== MOON DRIFT ===== */
+
+.moon-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1; /* behind text but above deepest stars */
+}
+
+.moon {
+  position: absolute;
+  top: 18%;
+  left: -15%;
+
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 35% 35%, #ffffff 0%, #e6f2ff 40%, #cddff5 70%, #9fb8d8 100%);
+
+  opacity: 0.18;
+
+  filter:
+    blur(1px)
+    drop-shadow(0 0 25px rgba(200,220,255,0.25));
+
+  animation: moonDrift 240s linear infinite; /* 4 minutes */
+}
+
+@keyframes moonDrift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(130vw);
+  }
+}

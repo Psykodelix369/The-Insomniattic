@@ -17,19 +17,19 @@
 
 /* ========= LOOK MODIFIERS ========= */
 
-/* Slightly brighter + crisp */
+/* Crisp / slightly brighter */
 .crisp {
   filter:
-    drop-shadow(0 0 2px rgba(255,255,255,0.95))
-    drop-shadow(0 0 6px rgba(180,210,255,0.85));
+    drop-shadow(0 0 2px rgba(255,255,255,0.90))
+    drop-shadow(0 0 6px rgba(180,210,255,0.75));
 }
 
 /* Hazy / atmospheric glow */
 .hazy {
   filter:
     blur(1.2px)
-    drop-shadow(0 0 18px rgba(120,170,255,0.35));
-  opacity: 0.75;
+    drop-shadow(0 0 18px rgba(120,170,255,0.30));
+  opacity: 0.78;
 }
 
 /* ========= STAR MAPS ========= */
@@ -43,19 +43,23 @@
     radial-gradient(1.8px 1.8px at 360px 80px, rgba(215,235,255,0.92), transparent),
     radial-gradient(1.8px 1.8px at 80px 260px, rgba(235,245,255,0.96), transparent),
     radial-gradient(1.8px 1.8px at 320px 320px, rgba(220,240,255,0.92), transparent);
-  animation: flyThrough 55s linear infinite, alternateFade 24s ease-in-out infinite;
+
+  /* slightly faster drift + MUCH less blackout */
+  animation: flyThrough 45s linear infinite, alternateFade 18s ease-in-out infinite;
 }
 
 /* Hazy star map B */
 .setB {
   background-image:
-    radial-gradient(1.6px 1.6px at 60px 70px, rgba(235,245,255,0.9), transparent),
+    radial-gradient(1.6px 1.6px at 60px 70px, rgba(235,245,255,0.90), transparent),
     radial-gradient(1.6px 1.6px at 180px 40px, rgba(225,240,255,0.86), transparent),
     radial-gradient(1.6px 1.6px at 300px 260px, rgba(215,235,255,0.84), transparent),
     radial-gradient(1.6px 1.6px at 380px 140px, rgba(205,230,255,0.82), transparent),
     radial-gradient(1.6px 1.6px at 120px 320px, rgba(220,240,255,0.84), transparent),
-    radial-gradient(1.6px 1.6px at 340px 360px, rgba(210,235,255,0.8), transparent);
-  animation: flyThroughDeep 80s linear infinite, alternateFade 24s ease-in-out infinite;
+    radial-gradient(1.6px 1.6px at 340px 360px, rgba(210,235,255,0.80), transparent);
+
+  animation: flyThroughDeep 65s linear infinite, alternateFade 18s ease-in-out infinite;
+  animation-delay: 6s;
 }
 
 /* Hazy star map C */
@@ -64,35 +68,35 @@
     radial-gradient(1.6px 1.6px at 30px 200px, rgba(235,245,255,0.88), transparent),
     radial-gradient(1.6px 1.6px at 210px 110px, rgba(225,240,255,0.84), transparent),
     radial-gradient(1.6px 1.6px at 270px 50px, rgba(215,235,255,0.82), transparent),
-    radial-gradient(1.6px 1.6px at 410px 300px, rgba(205,230,255,0.8), transparent),
+    radial-gradient(1.6px 1.6px at 410px 300px, rgba(205,230,255,0.80), transparent),
     radial-gradient(1.6px 1.6px at 150px 260px, rgba(220,240,255,0.82), transparent),
     radial-gradient(1.6px 1.6px at 360px 220px, rgba(210,235,255,0.78), transparent);
-  animation: flyThroughDeep 80s linear infinite, alternateFade 24s ease-in-out infinite;
-}
-/* Alternating fade */
-@keyframes alternateFade {
-  0%, 15%   { opacity: 0; }
-  35%, 65%  { opacity: 1; }
-  85%, 100% { opacity: 0; }
+
+  animation: flyThroughDeep 70s linear infinite, alternateFade 18s ease-in-out infinite;
+  animation-delay: 12s;
 }
 
-/* Slow drift */
-@keyframes drift {
-  from { transform: translate3d(0,0,0); }
-  to   { transform: translate3d(-6%, 4%, 0); }
+/* ========= NO-BLACKOUT FADE ========= */
+/* Key idea: never fade to 0 for long; keep a "floor" opacity */
+@keyframes alternateFade {
+  0%, 100% { opacity: 0.18; }  /* instead of 0 */
+  12%      { opacity: 1; }
+  50%      { opacity: 1; }
+  88%      { opacity: 0.22; }
+}
+
+/* ========= "DRIFT THROUGH SPACE" ========= */
+@keyframes flyThrough {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, 10%, 0); }
+}
+
+@keyframes flyThroughDeep {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(0, 12%, 0) scale(1.02); }
 }
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .layer { animation: none; }
-}
-
-@keyframes flyThrough {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(0, 8%, 0); }
-}
-
-@keyframes flyThroughDeep {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to   { transform: translate3d(0, 10%, 0) scale(1.02); }
 }

@@ -68,7 +68,7 @@
     radial-gradient(1.6px 1.6px at 150px 260px, rgba(220,240,255,0.82), transparent),
     radial-gradient(1.6px 1.6px at 360px 220px, rgba(210,235,255,0.78), transparent);
   animation: flyThroughDeep 80s linear infinite, alternateFade 24s ease-in-out infinite;
-
+}
 /* Alternating fade */
 @keyframes alternateFade {
   0%, 15%   { opacity: 0; }

@@ -1,15 +1,20 @@
+// app/layout.tsx
 import "./globals.css";
-import { Rubik_Burned } from "next/font/google";
+import { Fredoka } from "next/font/google";
 
-const burned = Rubik_Burned({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["500", "600"],
   variable: "--font-neon",
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={burned.variable}>
+    <html lang="en" className={fredoka.variable}>
       <body>{children}</body>
     </html>
   );

@@ -40,16 +40,19 @@
   height: 160px;
   border-radius: 50%;
 
+  /* Solid surface */
   background:
-    radial-gradient(circle at 35% 35%, #ffffff 0%, #e6f2ff 40%, #cddff5 70%, #9fb8d8 100%);
+    radial-gradient(circle at 35% 35%, #ffffff 0%, #e6f2ff 40%, #cddff5 75%, #9fb8d8 100%);
 
-  opacity: 0.18;
+  /* REMOVE opacity */
+  opacity: 1;
 
+  /* Soft atmospheric glow */
   filter:
-    blur(1px)
-    drop-shadow(0 0 25px rgba(200,220,255,0.25));
+    blur(0.8px)
+    drop-shadow(0 0 35px rgba(200,220,255,0.35));
 
-  animation: moonDrift 240s linear infinite; /* 4 minutes */
+  animation: moonDrift 240s linear infinite;
 }
 
 @keyframes moonDrift {

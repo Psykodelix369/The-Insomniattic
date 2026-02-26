@@ -36,21 +36,39 @@
   top: 18%;
   left: -15%;
 
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
 
-  /* Solid surface */
+  /* Moon texture: base shading + crater speckles + subtle terminator */
   background:
-    radial-gradient(circle at 35% 35%, #ffffff 0%, #e6f2ff 40%, #cddff5 75%, #9fb8d8 100%);
+    /* soft highlight */
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(236,246,255,0.95) 34%, rgba(196,216,235,0.95) 68%, rgba(140,165,195,0.96) 100%),
 
-  /* REMOVE opacity */
+    /* crater field (bigger, faint) */
+    radial-gradient(circle at 62% 42%, rgba(190,205,220,0.55) 0 7px, transparent 8px),
+    radial-gradient(circle at 48% 62%, rgba(170,185,205,0.40) 0 10px, transparent 11px),
+    radial-gradient(circle at 72% 70%, rgba(160,175,195,0.35) 0 6px, transparent 7px),
+    radial-gradient(circle at 38% 48%, rgba(170,185,205,0.38) 0 5px, transparent 6px),
+
+    /* crater field (tiny specks) */
+    radial-gradient(circle at 58% 58%, rgba(155,170,190,0.35) 0 2px, transparent 3px),
+    radial-gradient(circle at 66% 54%, rgba(155,170,190,0.28) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 44% 40%, rgba(155,170,190,0.25) 0 1.6px, transparent 2.6px),
+    radial-gradient(circle at 54% 76%, rgba(155,170,190,0.22) 0 1.4px, transparent 2.4px),
+
+    /* subtle terminator shadow on far edge */
+    radial-gradient(circle at 18% 50%, rgba(0,0,0,0) 0 62%, rgba(0,0,0,0.28) 82%, rgba(0,0,0,0.48) 100%);
+
   opacity: 1;
 
-  /* Soft atmospheric glow */
-  filter:
-    blur(0.8px)
-    drop-shadow(0 0 35px rgba(200,220,255,0.35));
+  /* Glow + depth */
+  box-shadow:
+    inset -18px 0 28px rgba(0,0,0,0.28),
+    0 0 22px rgba(200,220,255,0.22),
+    0 0 60px rgba(160,200,255,0.16);
+
+  filter: blur(0.4px);
 
   animation: moonDrift 240s linear infinite;
 }

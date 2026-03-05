@@ -81,3 +81,158 @@
     transform: translateX(130vw);
   }
 }
+/* ===== Homepage hero layout ===== */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #07070a;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+/* Dark vignette + subtle haze so text/logo always read well */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse at center, rgba(10,12,18,0.10) 0%, rgba(5,6,10,0.72) 70%, rgba(0,0,0,0.88) 100%),
+    radial-gradient(ellipse at 50% 42%, rgba(90,140,255,0.08) 0%, transparent 55%);
+}
+
+/* content above stars/moon */
+.heroContent{
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 980px;
+  width: 100%;
+  display: grid;
+  gap: 1.15rem;
+  justify-items: center;
+}
+
+/* ===== Logo glow (soft, not aggressive) ===== */
+.logoGlowWrap{
+  width: min(420px, 82vw);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.logoGlow{
+  width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(0 0 14px rgba(120,190,255,0.22))
+    drop-shadow(0 0 38px rgba(130,120,255,0.16));
+  animation: logoBreath 7.5s ease-in-out infinite;
+  transform: translateZ(0);
+}
+
+/* The “breathing neon” */
+@keyframes logoBreath{
+  0%, 100%{
+    filter:
+      drop-shadow(0 0 10px rgba(120,190,255,0.18))
+      drop-shadow(0 0 28px rgba(130,120,255,0.12));
+    transform: scale(1);
+    opacity: 0.98;
+  }
+  50%{
+    filter:
+      drop-shadow(0 0 16px rgba(120,190,255,0.28))
+      drop-shadow(0 0 48px rgba(140,120,255,0.20));
+    transform: scale(1.01);
+    opacity: 1;
+  }
+}
+
+/* ===== Title & tagline (moody, clean) ===== */
+.heroTitle{
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.5vw, 4.1rem);
+  margin: 0;
+  color: rgba(240,245,255,0.94);
+  text-shadow:
+    0 0 10px rgba(120,190,255,0.10),
+    0 0 26px rgba(130,120,255,0.08);
+}
+
+.heroTagline{
+  margin: 0;
+  max-width: 46rem;
+  color: rgba(210,220,235,0.72);
+  letter-spacing: 0.06em;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+}
+
+/* ===== Motion safety ===== */
+@media (prefers-reduced-motion: reduce){
+  .logoGlow{ animation: none; }
+}
+/* ===== Homepage Hero ===== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #07070a; /* forces dark */
+  display: grid;
+  place-items: center;
+  padding: 3rem 1.5rem;
+}
+
+/* subtle vignette so everything reads */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 500px at 50% 40%, rgba(40, 80, 255, 0.12), transparent 60%),
+    radial-gradient(1200px 800px at 50% 50%, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.65));
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2; /* above starfield */
+  text-align: center;
+  max-width: 900px;
+  padding: 1rem;
+}
+
+.heroLogo {
+  width: min(340px, 78vw); /* prevents HUGE logo */
+  height: auto;
+  margin: 0 auto 1.25rem;
+  display: block;
+  filter:
+    drop-shadow(0 0 18px rgba(90, 160, 255, 0.35))
+    drop-shadow(0 0 42px rgba(140, 90, 255, 0.20));
+  opacity: 0.95;
+}
+
+.heroTitle {
+  margin: 0;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 0 22px rgba(170, 130, 255, 0.22);
+}
+
+.heroTagline {
+  margin: 0.85rem 0 0;
+  color: rgba(200, 200, 210, 0.72);
+  font-size: 0.98rem;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}

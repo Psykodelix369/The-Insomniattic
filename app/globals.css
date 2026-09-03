@@ -164,9 +164,9 @@ body {
 }
 
 .heroLogo {
-  width: min(340px, 78vw);
+  width: min(400px, 82vw);
   height: auto;
-  margin: 1.25rem auto 0;
+  margin: 2.25rem auto 0;
   display: block;
   filter:
     drop-shadow(0 0 18px rgba(90, 160, 255, 0.35))
@@ -200,7 +200,7 @@ body {
   font-family: var(--font-neon), system-ui, sans-serif;
   font-weight: 600;
   letter-spacing: 0.08em;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(2.25rem, 5.5vw, 3.6rem);
   animation: heroGlow 16s ease-in-out infinite;
 }
 

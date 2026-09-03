@@ -5,9 +5,14 @@
   85% { color: #f6ff7a; }
 }
 
-html, body {
-  margin: 0;
+html {
   background: #07070a;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  background: transparent;
 }
 
 /* Fixed, full-viewport starfield that sits behind every page's content,
@@ -215,6 +220,7 @@ html, body {
 
 .pitchText {
   max-width: 42rem;
+  margin: 0;
   color: rgba(210, 215, 230, 0.78);
   font-size: 1.05rem;
   line-height: 1.75;

@@ -20,19 +20,25 @@ export default function Page() {
             draggable={false}
           />
           <h1 className="heroTitle">THE INSOMNIATTIC</h1>
-          <p className="heroTagline">
-            A place for those unwillingly addicted to insomnia.
-          </p>
         </div>
       </main>
 
       <section className="pitch">
+        <p className="pitchIntro">
+          The Insomniattic a place for those unwillingly addicted to insomnia.
+        </p>
         <p className="pitchText">
-          The Insomniattic is a late-night gathering place for the wide awake —
-          a spot to write, share, and exist alongside people who understand
-          exactly why the ceiling looks so interesting at 3am. No pressure to
-          sleep here. Just company, creativity, and the quiet company of
-          fellow night owls.
+          A spot to write, share, collaborate and simply exist alongside
+          other Insomniaddicts who understand exactly why the ceiling looks
+          so interesting at 3am. Absolutely no pressure to sleep here, just
+          some great conversations, creativity and the quiet companionship
+          of other like minded Insomniaddicts.
+        </p>
+        <p className="pitchClose">
+          And remember&hellip;
+          <span className="pitchCloseLine">
+            The lights may be dim, but you&rsquo;re not alone.
+          </span>
         </p>
         <a href="#teaser" className="ctaButton">
           Step Into the Attic

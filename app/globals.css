@@ -5,6 +5,22 @@
   85% { color: #f6ff7a; }
 }
 
+html, body {
+  margin: 0;
+  background: #07070a;
+}
+
+/* Fixed, full-viewport starfield that sits behind every page's content,
+   so the same star background is consistent site-wide rather than
+   being redrawn per-section. */
+.siteBackground {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .neon-sign {
   font-family: var(--font-neon), system-ui, sans-serif;
   font-weight: 600;
@@ -116,9 +132,8 @@
 /* ===== Homepage Hero ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 78vh;
   overflow: hidden;
-  background: #07070a;
   display: grid;
   place-items: center;
   padding: 3rem 1.5rem;
@@ -181,8 +196,7 @@
 /* ===== PITCH SECTION ===== */
 .pitch {
   position: relative;
-  background: #07070a;
-  padding: 4rem 1.5rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -209,7 +223,7 @@
 
 .pitchClose {
   max-width: 42rem;
-  margin: 1.5rem 0 0;
+  margin: 0;
   color: rgba(210, 215, 230, 0.78);
   font-size: 1.05rem;
   line-height: 1.75;
@@ -218,7 +232,7 @@
 .pitchCloseLine {
   display: block;
   font-style: italic;
-  margin-top: 0.35rem;
+  margin-top: 1.25rem;
   color: rgba(225, 220, 255, 0.88);
 }
 
@@ -248,7 +262,6 @@
 
 /* ===== TEASER SECTION ===== */
 .teaserSection {
-  background: #07070a;
   padding: 1rem 1.5rem 5rem;
   text-align: center;
 }

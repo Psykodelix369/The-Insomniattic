@@ -177,3 +177,120 @@
   .heroLogo { animation: none; }
   .moon { animation: none; }
 }
+
+/* ===== PITCH SECTION ===== */
+.pitch {
+  position: relative;
+  background: #07070a;
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pitchText {
+  max-width: 42rem;
+  color: rgba(210, 215, 230, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+.ctaButton {
+  display: inline-block;
+  margin-top: 1.75rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  background: rgba(168, 85, 247, 0.08);
+  color: rgba(240, 235, 255, 0.95);
+  font-family: var(--font-neon), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.15);
+}
+
+.ctaButton:hover {
+  background: rgba(168, 85, 247, 0.16);
+  border-color: rgba(168, 85, 247, 0.75);
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.35), 0 0 50px rgba(34, 211, 238, 0.15);
+}
+
+/* ===== TEASER SECTION ===== */
+.teaserSection {
+  background: #07070a;
+  padding: 1rem 1.5rem 5rem;
+  text-align: center;
+}
+
+.teaserHeading {
+  font-family: var(--font-neon), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: rgba(240, 240, 250, 0.9);
+  text-shadow: 0 0 16px rgba(130, 120, 255, 0.18);
+  margin: 0 0 2rem;
+}
+
+.teaserGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.teaserCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(120, 150, 255, 0.15);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  text-decoration: none;
+  text-align: left;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.teaserCard:hover {
+  border-color: rgba(120, 150, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(90, 120, 255, 0.15);
+}
+
+.teaserCardTitle {
+  margin: 0;
+  font-family: var(--font-neon), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  color: rgba(235, 230, 255, 0.95);
+}
+
+.teaserCardDesc {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(190, 195, 210, 0.65);
+}
+
+.comingSoonTag {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(34, 211, 238, 0.85);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  background: rgba(34, 211, 238, 0.06);
+}

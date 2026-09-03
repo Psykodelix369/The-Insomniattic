@@ -178,18 +178,24 @@ body {
   0%, 100% {
     color: #a9d9e6;
     text-shadow:
+      0 0 3px rgba(4, 6, 12, 0.85),
+      0 0 7px rgba(4, 6, 12, 0.55),
       0 0 10px rgba(169, 217, 230, 0.32),
       0 0 26px rgba(169, 217, 230, 0.16);
   }
   33% {
     color: #c3b3e0;
     text-shadow:
+      0 0 3px rgba(4, 6, 12, 0.85),
+      0 0 7px rgba(4, 6, 12, 0.55),
       0 0 12px rgba(195, 179, 224, 0.36),
       0 0 30px rgba(195, 179, 224, 0.18);
   }
   66% {
     color: #a9d9c0;
     text-shadow:
+      0 0 3px rgba(4, 6, 12, 0.85),
+      0 0 7px rgba(4, 6, 12, 0.55),
       0 0 10px rgba(169, 217, 192, 0.32),
       0 0 26px rgba(169, 217, 192, 0.16);
   }
@@ -201,6 +207,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.08em;
   font-size: clamp(2.25rem, 5.5vw, 3.6rem);
+  -webkit-text-stroke: 1px rgba(5, 6, 12, 0.5);
   animation: heroGlow 16s ease-in-out infinite;
 }
 

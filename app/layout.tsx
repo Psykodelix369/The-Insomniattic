@@ -1,6 +1,7 @@
 // app/layout.tsx
 import "./globals.css";
 import { Fredoka } from "next/font/google";
+import Starfield from "../components/Starfield";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -15,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={fredoka.variable}>
-      <body>{children}</body>
+      <body>
+        <div className="siteBackground" aria-hidden="true">
+          <Starfield />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

@@ -11,13 +11,13 @@ export default function Page() {
         <Moon />
 
         <div className="heroContent">
+          <h1 className="heroTitle">THE INSOMNIATTIC</h1>
           <img
             src="/insomniattic-head-logo.png"
             alt="The Insomniattic logo"
             className="heroLogo"
             draggable={false}
           />
-          <h1 className="heroTitle">THE INSOMNIATTIC</h1>
         </div>
       </main>
 

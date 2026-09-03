@@ -1,11 +1,17 @@
 // app/page.tsx
 import Starfield from "../components/Starfield";
+import Moon from "../components/Moon";
+import Navbar from "../components/Navbar";
 
 export default function Page() {
   return (
     <main className="hero">
-      {/* Background layer */}
+      {/* Background layers */}
       <Starfield />
+      <Moon />
+
+      {/* Nav bar */}
+      <Navbar />
 
       {/* Foreground content */}
       <div className="heroContent">
@@ -15,9 +21,7 @@ export default function Page() {
           className="heroLogo"
           draggable={false}
         />
-
         <h1 className="heroTitle">THE INSOMNIATTIC</h1>
-
         <p className="heroTagline">
           A place for those unwillingly addicted to insomnia.
         </p>

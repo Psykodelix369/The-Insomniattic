@@ -35,24 +35,26 @@
   width: 210px;
   height: 210px;
   border-radius: 50%;
-  /* Higher-contrast base + bold, clearly-visible craters */
+  /* Layer order matters: first-listed = topmost. Craters/highlights must
+     come before the base shading gradient or they get painted over. */
   background:
-    radial-gradient(circle at 30% 28%, #ffffff 0%, #e4edf9 22%, #a9c0d8 50%, #7a94b3 75%, #4d6785 100%),
-    radial-gradient(circle at 63% 40%, rgba(60,78,102,0.75) 0 13px, transparent 14px),
-    radial-gradient(circle at 46% 63%, rgba(50,68,92,0.72) 0 18px, transparent 19px),
-    radial-gradient(circle at 74% 70%, rgba(55,73,97,0.68) 0 11px, transparent 12px),
-    radial-gradient(circle at 36% 46%, rgba(55,73,97,0.70) 0 9px, transparent 10px),
-    radial-gradient(circle at 58% 58%, rgba(40,58,82,0.65) 0 4px, transparent 4.5px),
-    radial-gradient(circle at 67% 53%, rgba(40,58,82,0.60) 0 3px, transparent 3.5px),
-    radial-gradient(circle at 43% 39%, rgba(40,58,82,0.55) 0 3px, transparent 3.5px),
-    radial-gradient(circle at 53% 78%, rgba(40,58,82,0.50) 0 2.5px, transparent 3px),
-    /* crater rim highlights, so pits read as concave not flat spots */
-    radial-gradient(circle at 61% 37%, rgba(255,255,255,0.35) 0 1px, transparent 2px),
-    radial-gradient(circle at 44% 60%, rgba(255,255,255,0.3) 0 1.5px, transparent 2.5px),
+    /* crater rim highlights (topmost, small bright dots on crater edges) */
+    radial-gradient(circle at 61% 37%, rgba(255,255,255,0.5) 0 1px, transparent 2px),
+    radial-gradient(circle at 44% 60%, rgba(255,255,255,0.45) 0 1.5px, transparent 2.5px),
+    /* crater field (bigger, sharp-edged, dark) */
+    radial-gradient(circle at 63% 40%, rgba(50,66,90,0.85) 0 13px, transparent 14px),
+    radial-gradient(circle at 46% 63%, rgba(42,58,80,0.82) 0 18px, transparent 19px),
+    radial-gradient(circle at 74% 70%, rgba(46,62,84,0.78) 0 11px, transparent 12px),
+    radial-gradient(circle at 36% 46%, rgba(46,62,84,0.80) 0 9px, transparent 10px),
+    radial-gradient(circle at 58% 58%, rgba(32,48,70,0.75) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 67% 53%, rgba(32,48,70,0.70) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 43% 39%, rgba(32,48,70,0.65) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 53% 78%, rgba(32,48,70,0.60) 0 2.5px, transparent 3px),
     /* defined terminator shadow on far edge */
-    radial-gradient(circle at 12% 50%, rgba(0,0,0,0) 0 48%, rgba(0,0,0,0.55) 76%, rgba(0,0,0,0.85) 100%);
+    radial-gradient(circle at 12% 50%, rgba(0,0,0,0) 0 48%, rgba(0,0,0,0.55) 76%, rgba(0,0,0,0.85) 100%),
+    /* base shading (bottommost - lights the whole disc) */
+    radial-gradient(circle at 30% 28%, #ffffff 0%, #e4edf9 22%, #a9c0d8 50%, #7a94b3 75%, #4d6785 100%);
   opacity: 1;
-  /* Tighter glow so it doesn't wash out surface detail */
   box-shadow:
     inset -22px 0 30px rgba(0,0,0,0.5),
     0 0 0 1px rgba(255,255,255,0.15),

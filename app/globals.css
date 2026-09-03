@@ -35,21 +35,30 @@
   width: 210px;
   height: 210px;
   border-radius: 50%;
-  /* Layer order matters: first-listed = topmost. Craters/highlights must
-     come before the base shading gradient or they get painted over. */
+  /* Layer order matters: first-listed = topmost. Each crater is a soft
+     shadow + a small offset highlight (light source upper-left), spread
+     across the whole face rather than clustered in one spot. */
   background:
-    /* crater rim highlights (topmost, small bright dots on crater edges) */
-    radial-gradient(circle at 61% 37%, rgba(255,255,255,0.5) 0 1px, transparent 2px),
-    radial-gradient(circle at 44% 60%, rgba(255,255,255,0.45) 0 1.5px, transparent 2.5px),
-    /* crater field (bigger, sharp-edged, dark) */
-    radial-gradient(circle at 63% 40%, rgba(50,66,90,0.85) 0 13px, transparent 14px),
-    radial-gradient(circle at 46% 63%, rgba(42,58,80,0.82) 0 18px, transparent 19px),
-    radial-gradient(circle at 74% 70%, rgba(46,62,84,0.78) 0 11px, transparent 12px),
-    radial-gradient(circle at 36% 46%, rgba(46,62,84,0.80) 0 9px, transparent 10px),
-    radial-gradient(circle at 58% 58%, rgba(32,48,70,0.75) 0 4px, transparent 4.5px),
-    radial-gradient(circle at 67% 53%, rgba(32,48,70,0.70) 0 3px, transparent 3.5px),
-    radial-gradient(circle at 43% 39%, rgba(32,48,70,0.65) 0 3px, transparent 3.5px),
-    radial-gradient(circle at 53% 78%, rgba(32,48,70,0.60) 0 2.5px, transparent 3px),
+    /* crater 1 - large, upper-left area */
+    radial-gradient(circle at 24% 24%, rgba(255,255,255,0.30) 0, transparent 7px),
+    radial-gradient(circle at 27% 27%, rgba(15,25,40,0.42) 0, rgba(15,25,40,0.18) 12px, transparent 22px),
+    /* crater 2 - mid-right */
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.26) 0, transparent 5px),
+    radial-gradient(circle at 73% 33%, rgba(15,25,40,0.38) 0, rgba(15,25,40,0.16) 9px, transparent 17px),
+    /* crater 3 - far right, smaller */
+    radial-gradient(circle at 82% 55%, rgba(255,255,255,0.22) 0, transparent 4px),
+    radial-gradient(circle at 84% 57%, rgba(15,25,40,0.34) 0, rgba(15,25,40,0.14) 7px, transparent 13px),
+    /* crater 4 - lower center-right, largest */
+    radial-gradient(circle at 58% 74%, rgba(255,255,255,0.28) 0, transparent 8px),
+    radial-gradient(circle at 61% 77%, rgba(15,25,40,0.42) 0, rgba(15,25,40,0.18) 14px, transparent 25px),
+    /* crater 5 - lower left */
+    radial-gradient(circle at 28% 66%, rgba(255,255,255,0.22) 0, transparent 4px),
+    radial-gradient(circle at 30% 68%, rgba(15,25,40,0.34) 0, rgba(15,25,40,0.14) 7px, transparent 14px),
+    /* crater 6 - small, center */
+    radial-gradient(circle at 47% 48%, rgba(255,255,255,0.18) 0, transparent 3px),
+    radial-gradient(circle at 48% 49%, rgba(15,25,40,0.28) 0, rgba(15,25,40,0.12) 5px, transparent 10px),
+    /* crater 7 - tiny fleck, upper right */
+    radial-gradient(circle at 60% 18%, rgba(15,25,40,0.25) 0, transparent 5px),
     /* defined terminator shadow on far edge */
     radial-gradient(circle at 12% 50%, rgba(0,0,0,0) 0 48%, rgba(0,0,0,0.55) 76%, rgba(0,0,0,0.85) 100%),
     /* base shading (bottommost - lights the whole disc) */

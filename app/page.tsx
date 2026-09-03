@@ -1,5 +1,4 @@
 // app/page.tsx
-import Starfield from "../components/Starfield";
 import Moon from "../components/Moon";
 import Navbar from "../components/Navbar";
 
@@ -9,7 +8,6 @@ export default function Page() {
       <Navbar />
 
       <main className="hero">
-        <Starfield />
         <Moon />
 
         <div className="heroContent">

@@ -33,7 +33,7 @@ export default function Page() {
           of other like minded Insomniaddicts.
         </p>
         <p className="pitchClose">
-          And remember&hellip;
+          Remember...
           <span className="pitchCloseLine">
             The lights may be dim, but you&rsquo;re not alone.
           </span>

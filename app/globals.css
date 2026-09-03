@@ -189,12 +189,37 @@
   align-items: center;
 }
 
+.pitchIntro {
+  max-width: 42rem;
+  font-style: italic;
+  color: rgba(215, 210, 235, 0.85);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.5rem;
+}
+
 .pitchText {
   max-width: 42rem;
   color: rgba(210, 215, 230, 0.78);
   font-size: 1.05rem;
   line-height: 1.75;
   letter-spacing: 0.01em;
+}
+
+.pitchClose {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  color: rgba(210, 215, 230, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.pitchCloseLine {
+  display: block;
+  font-style: italic;
+  margin-top: 0.35rem;
+  color: rgba(225, 220, 255, 0.88);
 }
 
 .ctaButton {

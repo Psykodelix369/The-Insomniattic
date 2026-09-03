@@ -174,14 +174,34 @@ body {
   opacity: 0.95;
 }
 
+@keyframes heroGlow {
+  0%, 100% {
+    color: #a9d9e6;
+    text-shadow:
+      0 0 10px rgba(169, 217, 230, 0.32),
+      0 0 26px rgba(169, 217, 230, 0.16);
+  }
+  33% {
+    color: #c3b3e0;
+    text-shadow:
+      0 0 12px rgba(195, 179, 224, 0.36),
+      0 0 30px rgba(195, 179, 224, 0.18);
+  }
+  66% {
+    color: #a9d9c0;
+    text-shadow:
+      0 0 10px rgba(169, 217, 192, 0.32),
+      0 0 26px rgba(169, 217, 192, 0.16);
+  }
+}
+
 .heroTitle {
   margin: 0;
   font-family: var(--font-neon), system-ui, sans-serif;
   font-weight: 600;
   letter-spacing: 0.08em;
   font-size: clamp(2rem, 5vw, 3.25rem);
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: 0 0 22px rgba(170, 130, 255, 0.22);
+  animation: heroGlow 16s ease-in-out infinite;
 }
 
 .heroTagline {
@@ -196,6 +216,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .heroLogo { animation: none; }
   .moon { animation: none; }
+  .heroTitle { animation: none; }
 }
 
 /* ===== PITCH SECTION ===== */

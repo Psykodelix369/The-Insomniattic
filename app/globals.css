@@ -140,8 +140,9 @@ body {
   min-height: 78vh;
   overflow: hidden;
   display: grid;
-  place-items: center;
-  padding: 3rem 1.5rem;
+  justify-items: center;
+  align-items: end;
+  padding: 3rem 1.5rem 2rem;
 }
 
 .hero::before {
@@ -164,7 +165,7 @@ body {
 }
 
 .heroLogo {
-  width: min(460px, 86vw);
+  width: min(520px, 90vw);
   height: auto;
   margin: 2rem auto 0;
   display: block;

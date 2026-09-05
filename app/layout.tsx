@@ -1,4 +1,4 @@
-// app/layout.tsx
+n baby// app/layout.tsx
 import "./globals.css";
 import { Fredoka } from "next/font/google";
 import Starfield from "../components/Starfield";

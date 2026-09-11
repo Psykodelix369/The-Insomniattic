@@ -2,6 +2,30 @@
 import Moon from "../components/Moon";
 import Navbar from "../components/Navbar";
 
+const TITLE = "THE INSOMNIATTIC";
+
+// Hand-varied timing per letter (not truly random, to avoid SSR/client
+// hydration mismatches) so each letter flickers at its own speed/offset -
+// some fast, some slow, a few dimmer than others like weak old bulbs.
+const LETTER_TIMING = [
+  { duration: 4.2, delay: 0.0, max: 1.0 },
+  { duration: 7.1, delay: 1.6, max: 0.85 },
+  { duration: 3.3, delay: 3.4, max: 1.0 },
+  { duration: 8.4, delay: 0.9, max: 0.9 },
+  { duration: 5.0, delay: 2.2, max: 1.0 },
+  { duration: 3.8, delay: 4.5, max: 0.8 },
+  { duration: 6.5, delay: 1.1, max: 1.0 },
+  { duration: 4.7, delay: 3.0, max: 0.95 },
+  { duration: 7.8, delay: 0.5, max: 0.85 },
+  { duration: 3.6, delay: 2.7, max: 1.0 },
+  { duration: 5.5, delay: 4.0, max: 0.9 },
+  { duration: 8.0, delay: 1.3, max: 1.0 },
+  { duration: 4.0, delay: 3.6, max: 0.82 },
+  { duration: 6.9, delay: 0.2, max: 1.0 },
+  { duration: 3.4, delay: 2.9, max: 0.95 },
+  { duration: 5.3, delay: 4.3, max: 1.0 },
+];
+
 export default function Page() {
   return (
     <>
@@ -11,7 +35,29 @@ export default function Page() {
         <Moon />
 
         <div className="heroContent">
-          <h1 className="heroTitle">THE INSOMNIATTIC</h1>
+          <h1 className="heroTitle">
+            {TITLE.split("").map((ch, i) => {
+              if (ch === " ") {
+                return <span key={i}>&nbsp;</span>;
+              }
+              const t = LETTER_TIMING[i % LETTER_TIMING.length];
+              return (
+                <span
+                  key={i}
+                  className="heroLetter"
+                  style={
+                    {
+                      animationDuration: `${t.duration}s`,
+                      animationDelay: `-${t.delay}s`,
+                      "--letter-max": t.max,
+                    } as React.CSSProperties
+                  }
+                >
+                  {ch}
+                </span>
+              );
+            })}
+          </h1>
           <img
             src="/insomniattic-head-logo.png"
             alt="The Insomniattic logo"

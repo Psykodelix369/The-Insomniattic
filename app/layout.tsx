@@ -1,6 +1,6 @@
 // app/layout.tsx
 import "./globals.css";
-import { Fredoka, Monoton } from "next/font/google";
+import { Fredoka, Bungee } from "next/font/google";
 import Starfield from "../components/Starfield";
 
 const fredoka = Fredoka({
@@ -9,7 +9,7 @@ const fredoka = Fredoka({
   variable: "--font-neon",
 });
 
-const monoton = Monoton({
+const bungee = Bungee({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-title",
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fredoka.variable} ${monoton.variable}`}>
+    <html lang="en" className={`${fredoka.variable} ${bungee.variable}`}>
       <body>
         <div className="siteBackground" aria-hidden="true">
           <Starfield />

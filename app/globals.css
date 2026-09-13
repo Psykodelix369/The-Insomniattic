@@ -177,8 +177,9 @@ body {
 
 @keyframes letterColorCycle {
   0%, 100% { color: #bfe8f2; }
-  33% { color: #d8c9f0; }
-  66% { color: #bfead0; }
+  25% { color: #d8c9f0; }
+  50% { color: #bfead0; }
+  75% { color: #e8dfa8; }
 }
 
 .heroTitle {

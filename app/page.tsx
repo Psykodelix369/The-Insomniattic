@@ -10,22 +10,22 @@ const TITLE = "THE INSOMNIATTIC";
 // in the cyan/purple/green cycle at the same moment, not just different
 // brightness levels.
 const LETTER_TIMING = [
-  { duration: 4.2, delay: 0.0, max: 1.0, colorDuration: 13, colorDelay: 0 },
-  { duration: 7.1, delay: 1.6, max: 0.85, colorDuration: 17, colorDelay: 4 },
-  { duration: 3.3, delay: 3.4, max: 1.0, colorDuration: 11, colorDelay: 7 },
-  { duration: 8.4, delay: 0.9, max: 0.9, colorDuration: 19, colorDelay: 2 },
-  { duration: 5.0, delay: 2.2, max: 1.0, colorDuration: 14, colorDelay: 9 },
-  { duration: 3.8, delay: 4.5, max: 0.8, colorDuration: 16, colorDelay: 5 },
-  { duration: 6.5, delay: 1.1, max: 1.0, colorDuration: 12, colorDelay: 11 },
-  { duration: 4.7, delay: 3.0, max: 0.95, colorDuration: 18, colorDelay: 3 },
-  { duration: 7.8, delay: 0.5, max: 0.85, colorDuration: 15, colorDelay: 8 },
-  { duration: 3.6, delay: 2.7, max: 1.0, colorDuration: 20, colorDelay: 1 },
-  { duration: 5.5, delay: 4.0, max: 0.9, colorDuration: 13, colorDelay: 6 },
-  { duration: 8.0, delay: 1.3, max: 1.0, colorDuration: 17, colorDelay: 10 },
-  { duration: 4.0, delay: 3.6, max: 0.82, colorDuration: 11, colorDelay: 4 },
-  { duration: 6.9, delay: 0.2, max: 1.0, colorDuration: 19, colorDelay: 7 },
-  { duration: 3.4, delay: 2.9, max: 0.95, colorDuration: 14, colorDelay: 2 },
-  { duration: 5.3, delay: 4.3, max: 1.0, colorDuration: 16, colorDelay: 9 },
+  { duration: 4.2, delay: 0.0, max: 1.0, colorDuration: 20, colorDelay: 0 },
+  { duration: 7.1, delay: 1.6, max: 0.85, colorDuration: 25, colorDelay: 4 },
+  { duration: 3.3, delay: 3.4, max: 1.0, colorDuration: 17, colorDelay: 7 },
+  { duration: 8.4, delay: 0.9, max: 0.9, colorDuration: 27, colorDelay: 2 },
+  { duration: 5.0, delay: 2.2, max: 1.0, colorDuration: 21, colorDelay: 9 },
+  { duration: 3.8, delay: 4.5, max: 0.8, colorDuration: 24, colorDelay: 5 },
+  { duration: 6.5, delay: 1.1, max: 1.0, colorDuration: 18, colorDelay: 11 },
+  { duration: 4.7, delay: 3.0, max: 0.95, colorDuration: 26, colorDelay: 3 },
+  { duration: 7.8, delay: 0.5, max: 0.85, colorDuration: 22, colorDelay: 8 },
+  { duration: 3.6, delay: 2.7, max: 1.0, colorDuration: 28, colorDelay: 1 },
+  { duration: 5.5, delay: 4.0, max: 0.9, colorDuration: 19, colorDelay: 6 },
+  { duration: 8.0, delay: 1.3, max: 1.0, colorDuration: 25, colorDelay: 10 },
+  { duration: 4.0, delay: 3.6, max: 0.82, colorDuration: 17, colorDelay: 4 },
+  { duration: 6.9, delay: 0.2, max: 1.0, colorDuration: 27, colorDelay: 7 },
+  { duration: 3.4, delay: 2.9, max: 0.95, colorDuration: 20, colorDelay: 2 },
+  { duration: 5.3, delay: 4.3, max: 1.0, colorDuration: 23, colorDelay: 9 },
 ];
 
 export default function Page() {

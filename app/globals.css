@@ -14,6 +14,7 @@ body {
   margin: 0;
   position: relative;
   background: transparent;
+  font-family: var(--font-body), Georgia, serif;
 }
 
 /* Fixed, full-viewport starfield that sits behind every page's content,
@@ -28,7 +29,7 @@ body {
 }
 
 .neon-sign {
-  font-family: var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 600;
   font-size: clamp(4.6rem, 9vw, 7.4rem);
   letter-spacing: 0.03em;
@@ -57,24 +58,14 @@ body {
   width: 210px;
   height: 210px;
   border-radius: 50%;
-  /* Broad, soft "maria" patches (like the real moon's dark seas) instead
-     of distinct crater dots - large, low-opacity, very feathered edges
-     so they blend into the surface rather than sitting on top of it. */
   background:
-    /* large soft patch, upper-left */
     radial-gradient(ellipse 55px 45px at 28% 26%, rgba(25,40,60,0.28) 0%, transparent 75%),
-    /* large soft patch, center-right */
     radial-gradient(ellipse 65px 55px at 64% 52%, rgba(25,40,60,0.24) 0%, transparent 75%),
-    /* medium soft patch, lower */
     radial-gradient(ellipse 48px 40px at 46% 74%, rgba(25,40,60,0.22) 0%, transparent 75%),
-    /* small subtle patch, right edge */
     radial-gradient(ellipse 30px 26px at 82% 34%, rgba(25,40,60,0.18) 0%, transparent 75%),
-    /* a couple of small, genuinely subtle craters for texture, no highlight dots */
     radial-gradient(circle at 40% 42%, rgba(20,32,48,0.20) 0, transparent 14px),
     radial-gradient(circle at 60% 66%, rgba(20,32,48,0.18) 0, transparent 12px),
-    /* defined terminator shadow on far edge */
     radial-gradient(circle at 12% 50%, rgba(0,0,0,0) 0 48%, rgba(0,0,0,0.55) 76%, rgba(0,0,0,0.85) 100%),
-    /* base shading (bottommost - lights the whole disc) */
     radial-gradient(circle at 30% 28%, #ffffff 0%, #e4edf9 22%, #a9c0d8 50%, #7a94b3 75%, #4d6785 100%);
   opacity: 1;
   box-shadow:
@@ -110,7 +101,7 @@ body {
 }
 
 .navBrand {
-  font-family: var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.04em;
   font-size: 1.05rem;
@@ -185,7 +176,7 @@ body {
 
 .heroTitle {
   margin: 0;
-  font-family: var(--font-title), var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 400;
   letter-spacing: 0.03em;
   font-size: clamp(2rem, 6vw, 3.4rem);
@@ -280,7 +271,7 @@ body {
   border: 1px solid rgba(168, 85, 247, 0.45);
   background: rgba(168, 85, 247, 0.08);
   color: rgba(240, 235, 255, 0.95);
-  font-family: var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.06em;
   font-size: 0.95rem;
@@ -303,7 +294,7 @@ body {
 }
 
 .teaserHeading {
-  font-family: var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.06em;
   font-size: clamp(1.4rem, 3vw, 2rem);
@@ -342,7 +333,7 @@ body {
 
 .teaserCardTitle {
   margin: 0;
-  font-family: var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.1rem;
@@ -379,7 +370,7 @@ body {
 }
 
 .pageTitle {
-  font-family: var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.06em;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -418,7 +409,7 @@ body {
 }
 
 .poemTitle {
-  font-family: var(--font-neon), system-ui, sans-serif;
+  font-family: var(--font-header), Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.04em;
   font-size: 1.3rem;
@@ -427,6 +418,7 @@ body {
 }
 
 .poemMeta {
+  font-family: var(--font-mono), 'Courier New', monospace;
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;

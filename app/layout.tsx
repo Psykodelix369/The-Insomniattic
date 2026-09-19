@@ -1,18 +1,26 @@
 // app/layout.tsx
 import "./globals.css";
-import { Fredoka, Bungee } from "next/font/google";
+import { Playfair_Display, EB_Garamond, Space_Mono } from "next/font/google";
 import Starfield from "../components/Starfield";
 
-const fredoka = Fredoka({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-neon",
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-header",
 });
 
-const bungee = Bungee({
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-body",
+});
+
+const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-title",
+  variable: "--font-mono",
 });
 
 export default function RootLayout({
@@ -21,7 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fredoka.variable} ${bungee.variable}`}>
+    <html
+      lang="en"
+      className={`${playfairDisplay.variable} ${ebGaramond.variable} ${spaceMono.variable}`}
+    >
       <body>
         <div className="siteBackground" aria-hidden="true">
           <Starfield />
